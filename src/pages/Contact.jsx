@@ -35,7 +35,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>Email Us</h3>
-                                    <p style={{ color: 'var(--text-muted)' }}>hello@getiva.com</p>
+                                    <p style={{ color: 'var(--text-muted)' }}>hr@getiva.com</p>
                                 </div>
                             </div>
                             <div className="glass" style={{ padding: '1.5rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -44,7 +44,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>Call Us</h3>
-                                    <p style={{ color: 'var(--text-muted)' }}>+1 (555) 123-4567</p>
+                                    <p style={{ color: 'var(--text-muted)' }}>+1 (945) 360-2904</p>
                                 </div>
                             </div>
                             <div className="glass" style={{ padding: '1.5rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -53,7 +53,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>Visit Us</h3>
-                                    <p style={{ color: 'var(--text-muted)' }}>123 Business Ave, Tech City</p>
+                                    <p style={{ color: 'var(--text-muted)' }}>117 S Lexington St Ste 100, Harrisonville, MO 64701</p>
                                 </div>
                             </div>
                         </div>

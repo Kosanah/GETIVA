@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
     return (
@@ -9,18 +9,22 @@ export default function Footer() {
                     {/* Brand */}
                     <div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-                            <img src="/src/assets/logo.png" alt="GETIVA" style={{ height: '30px' }} />
+                            <img src="logo.png" alt="GETIVA" style={{ height: '30px', width: '30px', borderRadius: '50%', objectFit: 'cover' }} />
                             <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>GETIVA</span>
                         </div>
                         <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
                             Empowering businesses with top-tier talent and helping professionals find their dream careers.
                         </p>
                         <div style={{ display: 'flex', gap: '1rem' }}>
-                            {[Linkedin, Twitter, Facebook, Instagram].map((Icon, i) => (
-                                <a key={i} href="#" style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }} className="social-icon">
-                                    <Icon size={20} />
-                                </a>
-                            ))}
+                            <a href="https://www.linkedin.com/company/getiva-sparse/" target="_blank" rel="noopener" style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }} className="social-icon" aria-label="LinkedIn">
+                                <Linkedin size={20} />
+                            </a>
+                            <a href="https://x.com/getiva262211?s=11" target="_blank" rel="noopener" style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }} className="social-icon" aria-label="X">
+                                <Twitter size={20} />
+                            </a>
+                            <a href="https://www.instagram.com/getiva_262211?igsh=MTEwYXV6NjJseHI4dg==" target="_blank" rel="noopener" style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }} className="social-icon" aria-label="Instagram">
+                                <Instagram size={20} />
+                            </a>
                         </div>
                     </div>
 
@@ -50,13 +54,13 @@ export default function Footer() {
                         <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: '600' }}>Contact</h4>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem', color: 'var(--text-muted)' }}>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <Mail size={18} /> hello@getiva.com
+                                <Mail size={18} /> hr@getiva.com
                             </li>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <Phone size={18} /> +1 (555) 123-4567
+                                <Phone size={18} /> +1 (945) 360-2904
                             </li>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <MapPin size={18} /> 123 Business Ave, Tech City
+                                <MapPin size={18} /> 117 S Lexington St Ste 100, Harrisonville, MO 64701
                             </li>
                         </ul>
                     </div>

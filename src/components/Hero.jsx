@@ -1,31 +1,28 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
     return (
         <header style={{ height: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
-            {/* Video Background */}
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, background: '#000' }}>
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6 }}
-                    poster="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop"
-                >
-                    <source src="https://v.ftcdn.net/05/63/69/56/700_F_563695645_12345.mp4" type="video/mp4" />
-                    {/* Note: The above URL is a placeholder. If it fails, the poster will show. 
-               For a real project, we should host the video locally or use a paid CDN. 
-               I'll use a reliable free sample if possible, or just the poster. */}
-                </video>
+            {/* Simple Static Background */}
+            <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: -1,
+                background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)'
+            }}>
+                {/* Subtle overlay for depth */}
                 <div style={{
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    background: 'linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,0.9))'
+                    background: 'radial-gradient(circle at 30% 50%, rgba(255, 87, 34, 0.05) 0%, transparent 50%)'
                 }}></div>
             </div>
 
@@ -63,19 +60,36 @@ export default function Hero() {
                     </p>
 
                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                        <button className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.1rem' }}>
+                        <Link
+                            to="/contact"
+                            className="btn-primary"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                fontSize: '1.1rem',
+                                textDecoration: 'none'
+                            }}
+                        >
                             Find Talent <ArrowRight size={20} />
-                        </button>
-                        <button className="glass" style={{
-                            padding: '0.75rem 2rem',
-                            borderRadius: '50px',
-                            color: 'white',
-                            fontWeight: '600',
-                            fontSize: '1.1rem',
-                            transition: 'background 0.2s'
-                        }}>
+                        </Link>
+                        <Link
+                            to="/careers"
+                            className="glass"
+                            style={{
+                                padding: '0.75rem 2rem',
+                                borderRadius: '50px',
+                                color: 'white',
+                                fontWeight: '600',
+                                fontSize: '1.1rem',
+                                transition: 'all 0.2s',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                textDecoration: 'none'
+                            }}
+                        >
                             Find Work
-                        </button>
+                        </Link>
                     </div>
                 </motion.div>
             </div>
