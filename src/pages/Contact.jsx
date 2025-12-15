@@ -5,13 +5,30 @@ import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
 export default function Contact() {
     const [formState, setFormState] = useState('idle') // idle, submitting, success
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setFormState('submitting')
-        // Simulate network request
-        setTimeout(() => {
-            setFormState('success')
-        }, 1500)
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setFormState('submitting');
+        const form = e.target;
+        const name = form.elements[0].value;
+        const email = form.elements[1].value;
+        const phone = form.elements[2].value;
+        const message = form.elements[3].value;
+        try {
+            const res = await fetch('https://getiva.onrender.com/api/form-submission', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, phone, message })
+            });
+            if (res.ok) {
+                setFormState('success');
+            } else {
+                setFormState('idle');
+                alert('Failed to send message. Please try again.');
+            }
+        } catch (err) {
+            setFormState('idle');
+            alert('Failed to send message. Please try again.');
+        }
     }
 
     return (
@@ -35,7 +52,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>Email Us</h3>
-                                    <p style={{ color: 'var(--text-muted)' }}>hr@getiva.com</p>
+                                    <p style={{ color: 'var(--text-muted)' }}>getiva.hr@getiva.net</p>
                                 </div>
                             </div>
                             <div className="glass" style={{ padding: '1.5rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -81,6 +98,10 @@ export default function Contact() {
                                 <div>
                                     <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Email</label>
                                     <input required type="email" style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'rgba(0,0,0,0.2)', color: 'white' }} placeholder="your@email.com" />
+                                </div>
+                                <div>
+                                    <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Phone</label>
+                                    <input required type="tel" style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'rgba(0,0,0,0.2)', color: 'white' }} placeholder="Your Phone Number" />
                                 </div>
                                 <div>
                                     <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Message</label>

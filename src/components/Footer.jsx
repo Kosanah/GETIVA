@@ -54,7 +54,7 @@ export default function Footer() {
                         <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: '600' }}>Contact</h4>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem', color: 'var(--text-muted)' }}>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <Mail size={18} /> hr@getiva.com
+                                <Mail size={18} /> getiva.hr@getiva.net
                             </li>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                 <Phone size={18} /> +1 (945) 360-2904
